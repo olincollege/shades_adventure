@@ -6,7 +6,7 @@ pygame.init()
 width = 800
 height = 400
 
-screen = pygame.display.set_mode(800, 400)
+screen = pygame.display.set_mode([width, height])
 pygame.display.set_caption("Shades's Adventure")
 
 run = True
