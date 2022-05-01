@@ -1,13 +1,13 @@
 """This code is for the fighters in the game"""
 
-#import pygame
 import random
+import pygame
 
-class Fighter():
+class Fighter:
     """
     """
     
-    def __init__(self, name, max_hp, strength, block_):
+    def __init__(self, name, max_hp, strength, block_, x, y):
         """
         """
         self.name = name
@@ -16,6 +16,9 @@ class Fighter():
         self.strength = strength
         self.block_ = block_
         self.dead = False
+        self.image = pygame.image.load("img/sprite.png").convert_alpha()
+        self.rectangle = self.image.get_rect()
+        self.rectangle_center = (x, y)
 
     def draw(self):
         """
@@ -33,7 +36,7 @@ class Fighter():
         added_damage = random.randint(-3,3)
         total_damage = self.strength + added_damage
         target.current_hp -= total_damage
-        if target.current_hp == 0:
+        if target.current_hp < 1:
             target.dead = True
             #Death animation
         #Add attack animation after this
@@ -44,7 +47,7 @@ class Fighter():
         added_block = random.randint(-3, 0)
         total_damage = self.strength + self.block_ + added_block
         self.current_hp -= total_damage
-        if self.current_hp == 0:
+        if self.current_hp < 1:
             self.dead = True
             #Death animation
         #Add block animation after this
