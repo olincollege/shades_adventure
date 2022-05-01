@@ -16,8 +16,8 @@ clicked = False
 game_over = 0
 
 background = pygame.image.load("img/background.png").convert_alpha()
-#shades = pygame.image.load("").convert_alpha()
-#goon = pygame.image.load("").convert_alpha()
+# shades = pygame.image.load("").convert_alpha()
+# goon = pygame.image.load("").convert_alpha()
 
 def draw_background():
     screen.blit(background,(0,0))
@@ -27,21 +27,21 @@ run = True
 while run:
     draw_background()
 
-    #shades = Fighter("Shades", 100, 15, -5)
-    #goon = Fighter("Goon", 75, 10, -3)
+    shades = Fighter("Shades", 100, 15, -5)
+    goon = Fighter("Goon", 75, 10, -3)
 
-    #screen.blit(shades.image, shades.rectangle)
-    #screen.blit(goon.image, goon.image)
+    screen.blit(shades.image, shades.rectangle)
+    screen.blit(goon.image, goon.image)
 
-    #Shades actions
-    #attack = False
-    #pygame.mouse.set_visible(True)
-    #pos = pygame.mouse.get_pos()
-    #if goon.rectangle.collidepoint(pos):
-    #    if clicked == True and goon.death == False:
-    #        attack = True
-    #        print("You attacked the goon!")
-    #        print("Goon's Health: " + goon.current_hp)
+    # Shades actions
+    attack = False
+    pygame.mouse.set_visible(True)
+    pos = pygame.mouse.get_pos()
+    if goon.rectangle.collidepoint(pos):
+       if clicked == True and goon.death == False:
+           attack = True
+           print("You attacked the goon!")
+           print("Goon's Health: " + goon.current_hp)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:

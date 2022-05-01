@@ -1,13 +1,9 @@
 """This code is for the fighters in the game"""
 
-<<<<<<< HEAD
-import pygame
-=======
->>>>>>> 615bdaeda6d56aa94ab11323e5a8b86d8fb7e0aa
 import random
 import pygame
 
-class Fighter:
+class Fighter():
     """
     """
     
