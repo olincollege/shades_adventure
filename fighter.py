@@ -1,52 +1,73 @@
-"""Fighter Class"""
+"""This code is for the fighters in the game"""
 
-import pygame
+#import pygame
+import random
 
 class Fighter():
     """
     """
     
-    def __init__(self, x, y, name, max_hp, strength):
+    def __init__(self, name, max_hp, strength, block_):
         """
         """
         self.name = name
         self.max_hp = max_hp
         self.current_hp = max_hp
         self.strength = strength
+        self.block_ = block_
         self.dead = False
-        #self.sprite = pygame.image.load()
-        #self.rectangle = self.sprite.get_rect()
-        #self.rectangle.cent = (x, y)
 
     def draw(self):
         """
         """
         pass
+
     def animate(self):
         """
         """
         pass
-    def idle(self):
+
+    def attack(self, target):
+        """
+        """
+        added_damage = random.randint(-3,3)
+        total_damage = self.strength + added_damage
+        target.current_hp -= total_damage
+        if target.current_hp == 0:
+            target.dead = True
+            #Death animation
+        #Add attack animation after this
+
+    def block(self, target):
+        """
+        """
+        added_block = random.randint(-3, 0)
+        total_damage = self.strength + self.block_ + added_block
+        self.current_hp -= total_damage
+        if self.current_hp == 0:
+            self.dead = True
+            #Death animation
+        #Add block animation after this
+
+    def idle_animation(self):
         """
         """
         pass
-    def attack(self):
+
+    def hurt_animation(self):
         """
         """
         pass
-    def block(self):
+
+    def death_animation(self):
         """
         """
         pass
-    def hurt(self):
-        """
-        """
-        pass
-    def death(self):
-        """
-        """
+
     def reset(self):
         """
         """
-        pass
+        self.death = False
+        self.current_hp = self.max_hp
+        #Add animation stuff
     
