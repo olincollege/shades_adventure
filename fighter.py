@@ -1,6 +1,6 @@
 """This code is for the fighters in the game"""
 
-#import pygame
+import pygame
 import random
 
 class Fighter():
