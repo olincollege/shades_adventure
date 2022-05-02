@@ -5,6 +5,15 @@ import pygame
 
 class Fighter():
     """
+    Fighter class for both player controlled character and NPC's.
+    
+    Attributes:
+        name: A string representing the name of the fighter.
+        max_hp: An int representing the maximum health a fighter can have.
+        strength: An int representing the strength of a fighter.
+        block_: An int representing a fighter's ability to block.
+        x: An int representing an x-coordinate.
+        y: An int representing a y-coordinate.
     """
     
     def __init__(self, name, max_hp, strength, block_, x, y):
@@ -32,6 +41,7 @@ class Fighter():
 
     def attack(self, target):
         """
+        Determine the amount of damage done to an opponent.
         """
         added_damage = random.randint(-3,3)
         total_damage = self.strength + added_damage
@@ -43,6 +53,8 @@ class Fighter():
 
     def block(self, target):
         """
+        Determien the amount of damage done to fighter when attacked by an
+        opponent.
         """
         added_block = random.randint(-3, 0)
         total_damage = self.strength + self.block_ + added_block
@@ -69,6 +81,7 @@ class Fighter():
 
     def reset(self):
         """
+        Reset Character stats at the end of a game.
         """
         self.death = False
         self.current_hp = self.max_hp
