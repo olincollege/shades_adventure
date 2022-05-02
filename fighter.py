@@ -53,7 +53,7 @@ class Fighter():
 
     def block(self, target):
         """
-        Determien the amount of damage done to fighter when attacked by an
+        Determine the amount of damage done to fighter when attacked by an
         opponent.
         """
         added_block = random.randint(-3, 0)
@@ -64,20 +64,13 @@ class Fighter():
             #Death animation
         #Add block animation after this
 
-    def idle_animation(self):
+    def heal(self, potion):
         """
         """
-        pass
-
-    def hurt_animation(self):
-        """
-        """
-        pass
-
-    def death_animation(self):
-        """
-        """
-        pass
+        damage_taken = self.max_hp - self.current_hp
+        if damage_taken < potion:
+            potion = damage_taken
+        self.current_hp += potion
 
     def reset(self):
         """
