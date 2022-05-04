@@ -76,7 +76,7 @@ while run:
                     print("Goon Health: ", goon.current_hp)
                     current_fighter += 1
                 if block == True:
-                    shades.block()
+                    shades.block(True)
                     print("Blocked!")
                     current_fighter += 1
                 if heal == True:
@@ -135,9 +135,4 @@ while run:
         else:
             clicked = False
     pygame.display.update()
-<<<<<<< HEAD
-
 pygame.quit()
-=======
-pygame.quit()
->>>>>>> f49eb1e1c77958e54d31ea579895d61fa2ab4dbc

@@ -47,23 +47,21 @@ class Fighter():
             target: The instance of the Fighter class of the enemy target.
         """
         added_damage = random.randint(-3,3)
-        total_damage = self.strength + added_damage
+        if target.block() is True:
+            added_block = random.randint(-3, 0)
+            total_damage = self.strength + added_damage + target.block_\
+            + added_block
+        else:    
+            total_damage = self.strength + added_damage
         target.current_hp -= total_damage
         if target.current_hp < 1:
             target.dead = True
-            #Death animation
-        #Add attack animation after this
 
     def block(self, status):
         """
         Determine the amount of damage done to fighter when attacked by an
         opponent.
         """
-        added_block = random.randint(-3, 0)
-        total_damage = self.strength + self.block_ + added_block
-        self.current_hp -= total_damage
-        if self.current_hp < 1:
-            self.dead = True
         return status
 
     def heal(self, potion):
@@ -86,4 +84,3 @@ class Fighter():
         """
         self.death = False
         self.current_hp = self.max_hp
-        #Add animation stuff
