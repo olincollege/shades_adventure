@@ -4,7 +4,7 @@ import pygame
 class HealthBar():
     """
     
-    """    
+    """
     def __init__(self, surface, x, y):
         """
         
@@ -28,7 +28,6 @@ class HealthBar():
 
         while True:
             self.surface.blit(text, textRect)
-            
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
