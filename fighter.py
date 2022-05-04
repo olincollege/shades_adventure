@@ -24,6 +24,7 @@ class Fighter():
         self.current_hp = max_hp
         self.strength = strength
         self.block_ = block_
+        self.block_status = False
         self.dead = False
         self.image = pygame.image.load("img/sprite.png").convert_alpha()
         self.rectangle = self.image.get_rect()
@@ -47,22 +48,24 @@ class Fighter():
             target: The instance of the Fighter class of the enemy target.
         """
         added_damage = random.randint(-3,3)
-        if target.block() is True:
+        if target.block_status is True:
             added_block = random.randint(-3, 0)
             total_damage = self.strength + added_damage + target.block_\
             + added_block
+            target.block_status = False
         else:    
             total_damage = self.strength + added_damage
         target.current_hp -= total_damage
         if target.current_hp < 1:
             target.dead = True
 
-    def block(self, status):
+    def block(self):
         """
         Determine the amount of damage done to fighter when attacked by an
         opponent.
         """
-        return status
+        self.block_status = True
+        return self.block_status
 
     def heal(self, potion):
         """
@@ -84,3 +87,6 @@ class Fighter():
         """
         self.death = False
         self.current_hp = self.max_hp
+
+balls = Fighter("Goon", 75, 10, -3, 825, 300)
+print(balls.block())

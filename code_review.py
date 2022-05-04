@@ -98,7 +98,7 @@ while run:
                         goon.heal()
                         print("Goon Healed")
                     else:
-                        goon.block()
+                        goon.block(True)
                         print("Blocked!")
                 else:
                     rand_action = random.randint(0,2)
@@ -107,7 +107,7 @@ while run:
                         print("Goon attacked you!")
                         print("Shades Health: ", shades.current_hp)
                     if rand_action == 1:
-                        goon.block()
+                        goon.block(True)
                         print("Blocked!")
                     if rand_action == 2:
                         goon.heal()
