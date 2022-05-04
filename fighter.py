@@ -42,6 +42,9 @@ class Fighter():
     def attack(self, target):
         """
         Determine the amount of damage done to an opponent.
+        
+        Args:
+            target: The instance of the Fighter class of the enemy target.
         """
         added_damage = random.randint(-3,3)
         total_damage = self.strength + added_damage
@@ -66,6 +69,11 @@ class Fighter():
 
     def heal(self, potion):
         """
+        Add health to player's current health.
+
+        Args:
+            potion: An int representing the amount of health rewarded back to
+            the character.
         """
         damage_taken = self.max_hp - self.current_hp
         if damage_taken < potion:
@@ -79,4 +87,3 @@ class Fighter():
         self.death = False
         self.current_hp = self.max_hp
         #Add animation stuff
-    

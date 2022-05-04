@@ -135,4 +135,9 @@ while run:
         else:
             clicked = False
     pygame.display.update()
+<<<<<<< HEAD
 pygame.quit()
+=======
+
+pygame.quit()
+>>>>>>> 2aae20f1434de5e6b7b09af75d7cbc23c3e16c1d
