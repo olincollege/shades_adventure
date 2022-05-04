@@ -52,7 +52,7 @@ while run:
     #heal_button.draw()
     #target_one_button.draw()
 
-    #Shades actions
+    # Shades actions
     attack = False
     block = False
     heal = False
@@ -95,7 +95,7 @@ while run:
                 if goon.current_hp <= 25:
                     rand_low_health = random.randint(0,1)
                     if rand_low_health == 0:
-                        #goon.heal()
+                        goon.heal()
                         print("Goon Healed")
                     else:
                         goon.block()
@@ -110,7 +110,7 @@ while run:
                         goon.block()
                         print("Blocked!")
                     if rand_action == 2:
-                        #goon.heal()
+                        goon.heal()
                         print("Goon healed")
         else:
             game_over = 2
@@ -120,12 +120,12 @@ while run:
 
     if game_over != 0:
         if game_over == 1:
-            #add screen.blit lose
+            # add screen.blit lose
             print("You Lost!")
         if game_over == 2:
-            #add screen.blit victory
+            # add screen.blit victory
             print("You win")
-        #add conditional for restart button
+        # add conditional for restart button
     
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -135,9 +135,5 @@ while run:
         else:
             clicked = False
     pygame.display.update()
-<<<<<<< HEAD
-pygame.quit()
-=======
 
 pygame.quit()
->>>>>>> 2aae20f1434de5e6b7b09af75d7cbc23c3e16c1d

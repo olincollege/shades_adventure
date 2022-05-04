@@ -54,7 +54,7 @@ class Fighter():
             #Death animation
         #Add attack animation after this
 
-    def block(self, target):
+    def block(self, status):
         """
         Determine the amount of damage done to fighter when attacked by an
         opponent.
@@ -64,8 +64,7 @@ class Fighter():
         self.current_hp -= total_damage
         if self.current_hp < 1:
             self.dead = True
-            #Death animation
-        #Add block animation after this
+        return status
 
     def heal(self, potion):
         """
@@ -75,6 +74,7 @@ class Fighter():
             potion: An int representing the amount of health rewarded back to
             the character.
         """
+        potion = 30
         damage_taken = self.max_hp - self.current_hp
         if damage_taken < potion:
             potion = damage_taken
