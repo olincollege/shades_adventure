@@ -2,10 +2,10 @@ import pygame
 
 #button class
 class Button():
-	def __init__(self, surface, x, y, image, x_size, y_size):
-		self.image = pygame.transform.scale(image, (x_size, y_size))
-		self.rect = self.image.get_rect()
-		self.rect.topleft = (x, y)
+	def __init__(self, surface):
+		# self.image = pygame.transform.scale(image, (x_size, y_size))
+		# self.rect = self.image.get_rect()
+		# self.rect.topleft = (x, y)
 		self.clicked = False
 		self.surface = surface
 
@@ -24,7 +24,7 @@ class Button():
 		if pygame.mouse.get_pressed()[0] == 0:
 			self.clicked = False
 
-		#draw button
-		self.surface.blit(self.image, (self.rect.x, self.rect.y))
+		# #draw button
+		# self.surface.blit(self.image, (self.rect.x, self.rect.y))
 
 		return action

@@ -1,7 +1,6 @@
 """This code is for the fighters in the game"""
 
 import random
-import pygame
 
 class Fighter():
     """
@@ -16,8 +15,9 @@ class Fighter():
         y: An int representing a y-coordinate.
     """
     
-    def __init__(self, name, max_hp, strength, block_, x, y):
+    def __init__(self, name, max_hp, strength, block_):
         """
+
         """
         self.name = name
         self.max_hp = max_hp
@@ -29,16 +29,6 @@ class Fighter():
         # self.image = pygame.image.load("img/sprite.png").convert_alpha()
         # self.rectangle = self.image.get_rect()
         # self.rectangle_center = (x, y)
-
-    def draw(self):
-        """
-        """
-        pass
-
-    def animate(self):
-        """
-        """
-        pass
 
     def attack(self, target):
         """
