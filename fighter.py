@@ -26,9 +26,9 @@ class Fighter():
         self.block_ = block_
         self.block_status = False
         self.dead = False
-        self.image = pygame.image.load("img/sprite.png").convert_alpha()
-        self.rectangle = self.image.get_rect()
-        self.rectangle_center = (x, y)
+        # self.image = pygame.image.load("img/sprite.png").convert_alpha()
+        # self.rectangle = self.image.get_rect()
+        # self.rectangle_center = (x, y)
 
     def draw(self):
         """
@@ -87,6 +87,3 @@ class Fighter():
         """
         self.death = False
         self.current_hp = self.max_hp
-
-balls = Fighter("Goon", 75, 10, -3, 825, 300)
-print(balls.block())

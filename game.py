@@ -1,6 +1,3 @@
-import pygame
+# import pygame
 
-class Game:
-
-    
-
+# class Game:
