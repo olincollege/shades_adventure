@@ -2,6 +2,7 @@ import pygame
 import random
 from fighter import Fighter
 from button_controls import Button
+from game_view import GameView
 
 pygame.init()
 
@@ -16,7 +17,7 @@ pygame.display.set_caption("Shades's Adventure")
 game_over = 0
 current_fighter = 1
 
-background = pygame.image.load("img/background.png").convert_alpha()
+background = GameView.background("img/background.png")
 panel_img = pygame.image.load("img/panel.png").convert_alpha()
 attack_img = pygame.image.load("img/attack_button.png").convert_alpha()
 block_img = pygame.image.load("img/block_button.png").convert_alpha()
