@@ -1,30 +1,24 @@
-import pygame 
+import pygame
 
-#button class
 class Button():
-	def __init__(self, surface):
-		# self.image = pygame.transform.scale(image, (x_size, y_size))
-		# self.rect = self.image.get_rect()
-		# self.rect.topleft = (x, y)
-		self.clicked = False
-		self.surface = surface
 
-	def draw(self):
-		action = False
+    def __init__(self, surface, rect):
+        #self.image = pygame.transform.scale(image, (x_size, y_size))
+        #self.rect = self.image.get_rect()
+        self.rect = rect
+        #self.rect.topleft = (x,y)
+        self.clicked = False
+        self.surface = surface
 
-		#get mouse position
-		mouse_position = pygame.mouse.get_pos()
+    def get_button(self):
+        action = False
+        mouse_pos = pygame.mouse.get_pos()
 
-		#check mouseover and clicked conditions
-		if self.rect.collidepoint(mouse_position):
-			if pygame.mouse.get_pressed()[0] == 1 and self.clicked == False:
-				action = True
-				self.clicked = True
-
-		if pygame.mouse.get_pressed()[0] == 0:
-			self.clicked = False
-
-		# #draw button
-		# self.surface.blit(self.image, (self.rect.x, self.rect.y))
-
-		return action
+        if self.rect.collidepoint(mouse_pos):
+            if pygame.mouse.get_pressed()[0] == 1 and self.clicked == False:
+                action = True
+                self.clicked = True
+        if pygame.mouse.get_pressed()[0] == 0:
+            self.clicked = False
+        #self.surface.blit(self.image, (self.rect.x, self.rect.y))
+        return action

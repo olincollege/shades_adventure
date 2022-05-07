@@ -25,23 +25,26 @@ class GameView():
         """
         
         """
-        background = pygame.image.load(image).convert_alpha()
-        self.surface.blit(background,(0,0))
+        #background = pygame.image.load(image).convert_alpha()
+        self.surface.blit(image,(0,0))
 
     def panel(self, image):
         """
         
         """
-        panel_img = pygame.image.load(image).convert_alpha()
-        self.surface.blit(panel_img, (0,self.height - self.panel_))
+        #panel_img = pygame.image.load(image).convert_alpha()
+        self.surface.blit(image, (0,self.height - self.panel_))
 
-    def character(self, image, x, y):
+    def display_character(self, image, x, y):
         """
         
         """
-        img = pygame.image.load(image).convert_alpha()
-        rectangle = img.get_rect()
-        recangle_center = (x, y)
+        start_img = pygame.image.load(image).convert_alpha()
+        img = pygame.transform.scale(start_img, (start_img.get_width() * 6, start_img.get_height() * 6))
+        rect = img.get_rect()
+        rect.center = (x, y)
+        self.surface.blit(img, (rect.x, rect.y))
+
 
     def health_bar(self, character, x, y):
         """
@@ -61,11 +64,13 @@ class GameView():
                     quit()
                 pygame.display.update()
 
-    def button(self, image, x, y, x_size, y_size):
+    def draw_button(self, image, x, y, x_size, y_size):
         """
         
         """
-        img = pygame.transform.scale(image, (x_size, y_size))
+        start_img = pygame.image.load(image).convert_alpha()
+        img = pygame.transform.scale(start_img, (x_size, y_size))
         rect = img.get_rect()
         rect.topleft = (x, y)
         self.surface.blit(img, (rect.x, rect.y))
+        return rect

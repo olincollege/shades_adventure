@@ -25,10 +25,12 @@ class Fighter():
         self.strength = strength
         self.block_ = block_
         self.block_status = False
-        self.dead = False
-        # self.image = pygame.image.load("img/sprite.png").convert_alpha()
-        # self.rectangle = self.image.get_rect()
-        # self.rectangle_center = (x, y)
+        self.potion_count = 0
+        self.death = False
+        #img = pygame.image.load('img/sprite.png').convert_alpha()
+        #self.image = pygame.transform.scale(img, (img.get_width() * 3, img.get_height() * 3))
+        #self.rectangle = self.image.get_rect()
+        #self.rectangle_center = (x, y)
 
     def attack(self, target):
         """
@@ -38,11 +40,10 @@ class Fighter():
             target: The instance of the Fighter class of the enemy target.
         """
         added_damage = random.randint(-3,3)
-        if target.block_status is True:
+        if target.block_status == True:
             added_block = random.randint(-3, 0)
             total_damage = self.strength + added_damage + target.block_\
             + added_block
-            target.block_status = False
         else:    
             total_damage = self.strength + added_damage
         target.current_hp -= total_damage
@@ -55,6 +56,8 @@ class Fighter():
         opponent.
         """
         self.block_status = True
+        if self.current_hp < 1:
+            self.death = True
         return self.block_status
 
     def heal(self, potion):
@@ -65,11 +68,18 @@ class Fighter():
             potion: An int representing the amount of health rewarded back to
             the character.
         """
-        potion = 30
-        damage_taken = self.max_hp - self.current_hp
-        if damage_taken < potion:
-            potion = damage_taken
-        self.current_hp += potion
+        if self.potion_count < 3:
+            if self.current_hp < 1:
+                self.death = True
+            else:
+                potion = 8
+                damage_taken = self.max_hp - self.current_hp
+                if damage_taken < potion:
+                    potion = damage_taken
+                self.current_hp += potion
+                self.potion_count += 1
+        else:
+            print("Out of potions")
 
     def reset(self):
         """
@@ -77,3 +87,4 @@ class Fighter():
         """
         self.death = False
         self.current_hp = self.max_hp
+        self.potion_count = 0
