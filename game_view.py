@@ -74,3 +74,4 @@ class GameView():
         rect.topleft = (x, y)
         self.surface.blit(img, (rect.x, rect.y))
         return rect
+        

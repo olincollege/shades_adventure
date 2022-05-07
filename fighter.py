@@ -49,7 +49,7 @@ class Fighter():
         target.current_hp -= total_damage
         if target.current_hp < 1:
             target.dead = True
-
+            
     def block(self):
         """
         Determine the amount of damage done to fighter when attacked by an
