@@ -19,12 +19,12 @@ current_fighter = 1
 
 background = GameView.background("img/background.png")
 panel_img = pygame.image.load("img/panel.png").convert_alpha()
-attack_img = pygame.image.load("img/attack_button.png").convert_alpha()
-block_img = pygame.image.load("img/block_button.png").convert_alpha()
-heal_img = pygame.image.load("img/heal_button.png").convert_alpha()
-target_img = pygame.image.load("img/test_target.png").convert_alpha()
-#shades = pygame.image.load("").convert_alpha()
-#goon = pygame.image.load("").convert_alpha()
+attack_img = pygame.image.load("img/Attack Button.png").convert_alpha()
+block_img = pygame.image.load("img/Block Button.png").convert_alpha()
+heal_img = pygame.image.load("img/Heal Button.png").convert_alpha()
+target_img = pygame.image.load("img/goon.png").convert_alpha()
+shades = pygame.image.load("shades.png").convert_alpha()
+goon = pygame.image.load("img/goon.png").convert_alpha()
 
 def draw_background():
     screen.blit(background,(0,0))
@@ -74,7 +74,7 @@ while run:
                 if attack == True:
                     shades.attack(target)
                     print("You attacked goon!")
-                    print("Goon Health: ", goon.current_hp)
+                    print(f"Goon Health: {goon.current_hp}")
                     current_fighter += 1
                 if block == True:
                     shades.block(True)
@@ -92,7 +92,7 @@ while run:
                 if shades.current_hp <= 20:
                     goon.attack(shades)
                     print("Goon attacked you!")
-                    print("Shades Health: ", shades.current_hp)
+                    print(f"Shades Health: {shades.current_hp}")
                 if goon.current_hp <= 25:
                     rand_low_health = random.randint(0,1)
                     if rand_low_health == 0:
@@ -106,7 +106,7 @@ while run:
                     if rand_action == 0:
                         goon.attack(shades)
                         print("Goon attacked you!")
-                        print("Shades Health: ", shades.current_hp)
+                        print(f"Shades Health: {shades.current_hp}")
                     if rand_action == 1:
                         goon.block(True)
                         print("Blocked!")
