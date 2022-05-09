@@ -8,6 +8,7 @@ from game_view import GameView
 
 def main():
     """
+    Run a game of Shades' Adventure.
     """
 
     pygame.init()
