@@ -9,11 +9,11 @@ To play the game, run the file `game.py`.
 On your way to your room you will face off against goons. You can do a few things to gain victory:
 
 - Attack: Deal damage to your opponent!
-    ![Alt Text](img/Attack Button.png)
+    ![Alt Text](webimage/attack.png)
 - Block: Defend yourself against enemy attacks!
-    ![Alt Text](img/Block Button.png)
+    ![Alt Text](webimage/block.png)
 - Heal: Gain back your health before the goon defeats you!
-    ![Alt Text](img/Heal Button.png)
+    ![Alt Text](webimage/heal.png)
     
 ## Installation
 
