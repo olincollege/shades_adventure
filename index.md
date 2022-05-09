@@ -4,7 +4,10 @@ Shades' Adventure is a game in which you get to experience the colorful world of
 
 ## How to Play
 
-To play the game, run the file `game.py`.
+To play the game, run the file `game.py` or type into your terminal:
+```
+pygame game.py
+```
 
 Shades' Adventure is a turn based RPG where your character fights against a goon.
 ![Alt Text](webimages/gameexample.jpg)
@@ -24,11 +27,17 @@ A few things that you are going to need before installing the game are:
 
 - python (3.8) - you can install python (3.8) [here](https://www.python.org/downloads/release/python-380/).
 
-- pygame - type `pip install pygame` into your terminal.
+- pygame - type into your terminal:
+```
+pip install pygame
+```
 
 - While not necessary, our repository includes a file, `test_fighter.py` for implementing unit tests. If you want to run our tests, you first need to type `pip install pytest` into your terminal.
 
-To clone our repository, type into your terminal `git clone git@github.com:olincollege/shades_adventure.git`.
+To clone our repository, type into your terminal:
+```
+git clone git@github.com:olincollege/shades_adventure.git
+```
 
 You are now ready to play Shades' Adventure!
 
