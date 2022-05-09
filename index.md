@@ -32,7 +32,7 @@ To clone our repository, type into your terminal `git clone git@github.com:olinc
 
 You are now ready to play Shades' Adventure!
 
-# About Us
+## About Us
 
 ![Alt Text](webimages/pizza.png)
 
