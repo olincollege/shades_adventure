@@ -18,3 +18,7 @@ The file structure for this project consists of the following .py files:
 - `test_game.py` is used to test all testable methods used in our code.
 
 The repository also contains a `/img` folder that contains all visuals used in the project.
+
+## Website
+
+Visit our website [here](https://olincollege.github.io/shades_adventure/)
