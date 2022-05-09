@@ -31,4 +31,10 @@ You are now ready to play Shades' Adventure!
 
 # About Us
 
-Evan Lockwood and Mateo Macias
+![Alt Text](img/pizza.png)
+
+Evan Lockwood(left) and Mateo Macias(right) are two students at the Frank W. Olin College of Engineering who love to sing shanties, talk about robots, and make videogames about their friend, Aaron.
+
+![Alt Text](img/aaron.png)
+
+This game is dedicated to Aaron for being an awesome friend and having super cool glasses.
