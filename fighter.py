@@ -44,23 +44,32 @@ class Fighter():
             added_block = random.randint(-3, 0)
             total_damage = self.strength + added_damage + target.block_\
             + added_block
-        else:    
+            if total_damage < 0:
+                total_damage = 0
+        else:
             total_damage = self.strength + added_damage
         target.current_hp -= total_damage
         if target.current_hp < 1:
-            target.dead = True
+            target.death = True
             
-    def block(self):
+    def block(self, status):
         """
         Determine the amount of damage done to fighter when attacked by an
         opponent.
         """
-        self.block_status = True
+        self.block_status = status
         if self.current_hp < 1:
             self.death = True
         return self.block_status
 
-    def heal(self, potion):
+    def reverse_block(self, target):
+        """
+        
+        """
+        if target.block_status == True:
+            target.block_status = False
+
+    def heal(self):
         """
         Add health to player's current health.
 
@@ -68,7 +77,7 @@ class Fighter():
             potion: An int representing the amount of health rewarded back to
             the character.
         """
-        if self.potion_count < 3:
+        if self.potion_count <= 3:
             if self.current_hp < 1:
                 self.death = True
             else:

@@ -40,4 +40,4 @@ Evan Lockwood(left) and Mateo Macias(right) are two students at the Frank W. Oli
 
 ![Alt Text](webimages/aaron.jpg)
 
-This game is dedicated to Aaron for being an awesome friend and having super cool glasses.
+This game is dedicated to Aaron for being an awesome friend and having cool glasses.
