@@ -21,4 +21,4 @@ The repository also contains a `/img` folder that contains all visuals used in t
 
 ## Website
 
-Visit our website [here](https://olincollege.github.io/shades_adventure/)
+Visit our website [here](https://olincollege.github.io/shades_adventure/).
