@@ -53,7 +53,7 @@ def test_heal_over_limit():
     assert fighter_test.heal() == None
 
 def test_heal_death():
-    fighter_test.death = False
-    fighter_test.current_hp = 0
-    fighter_test.heal()
-    assert fighter_test.death == True
+    enemy_test.death = False
+    enemy_test.current_hp = 0
+    enemy_test.heal()
+    assert enemy_test.death == True
