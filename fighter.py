@@ -5,7 +5,7 @@ import random
 class Fighter():
     """
     Fighter class for both player controlled character and NPC's.
-    
+
     Attributes:
         name: A string representing the name of the fighter.
         max_hp: An int representing the maximum health a fighter can have.
@@ -14,7 +14,7 @@ class Fighter():
         x: An int representing an x-coordinate.
         y: An int representing a y-coordinate.
     """
-    
+
     def __init__(self, name, max_hp, strength, block_):
         """
 
@@ -27,20 +27,16 @@ class Fighter():
         self.block_status = False
         self.potion_count = 0
         self.death = False
-        #img = pygame.image.load('img/sprite.png').convert_alpha()
-        #self.image = pygame.transform.scale(img, (img.get_width() * 3, img.get_height() * 3))
-        #self.rectangle = self.image.get_rect()
-        #self.rectangle_center = (x, y)
 
     def attack(self, target):
         """
         Determine the amount of damage done to an opponent.
-        
+
         Args:
             target: The instance of the Fighter class of the enemy target.
         """
         added_damage = random.randint(-3,3)
-        if target.block_status == True:
+        if target.block_status:
             added_block = random.randint(-3, 0)
             total_damage = self.strength + added_damage + target.block_\
             + added_block
@@ -51,7 +47,7 @@ class Fighter():
         target.current_hp -= total_damage
         if target.current_hp < 1:
             target.death = True
-            
+
     def block(self, status):
         """
         Determine the amount of damage done to fighter when attacked by an
@@ -64,9 +60,9 @@ class Fighter():
 
     def reverse_block(self, target):
         """
-        
+
         """
-        if target.block_status == True:
+        if target.block_status:
             target.block_status = False
 
     def heal(self):
@@ -77,7 +73,7 @@ class Fighter():
             potion: An int representing the amount of health rewarded back to
             the character.
         """
-        if self.potion_count <= 3:
+        if self.potion_count < 3:
             if self.current_hp < 1:
                 self.death = True
             else:

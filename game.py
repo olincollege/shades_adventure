@@ -1,141 +1,197 @@
-import pygame
+""""""
 import random
+import time
+import pygame
 from fighter import Fighter
 from button_controls import Button
 from game_view import GameView
 
 def main():
+    """
+    """
+
     pygame.init()
 
-    panel = 614/2
-    width = 1097
-    height = 614 + panel
-
+    panel = 618/2
+    width = 1103
+    height = 618 + panel
 
     screen = pygame.display.set_mode([width,height])
     pygame.display.set_caption("Shades's Adventure")
 
+    start_game = False
     game_over = 0
     current_fighter = 1
 
-    background = GameView.background("img/background.png")
+
+    starting_screen_img = pygame.image.load("img/start_screen_test.png").convert_alpha()
+    background_img = pygame.image.load("img/background.png").convert_alpha()
     panel_img = pygame.image.load("img/panel.png").convert_alpha()
-    attack_img = pygame.image.load("img/Attack Button.png").convert_alpha()
-    block_img = pygame.image.load("img/Block Button.png").convert_alpha()
-    heal_img = pygame.image.load("img/Heal Button.png").convert_alpha()
-    target_img = pygame.image.load("img/goon.png").convert_alpha()
-    shades = pygame.image.load("shades.png").convert_alpha()
-    goon = pygame.image.load("img/goon.png").convert_alpha()
 
-    def draw_background():
-        screen.blit(background,(0,0))
+    shades = Fighter("Shades", 100, 15, -5)
+    goon = Fighter("Goon", 100, 12, -3)
 
-    def draw_panel():
-        screen.blit(panel_img, (0,height - panel))
-
-    shades = Fighter("Shades", 100, 15, -5, 150, 300)
-    goon = Fighter("Goon", 75, 10, -3, 825, 300)
-    attack_button = Button(screen, 150, 675, attack_img, 60, 21)
-    block_button = Button(screen, 150, 700, block_img, 60, 21)
-    heal_button = Button(screen, 150, 725, heal_img, 60, 21)
-    target_one_button = Button(screen, 825, 675, target_img, 60, 21)
 
     run = True
 
     while run:
-        draw_background()
-        draw_panel()
+        game = GameView()
 
-        screen.blit(shades.image, shades.rectangle_center)
-        screen.blit(goon.image, goon.rectangle_center)
+        game.background(starting_screen_img)
+        start_button_start = game.draw_button("img/start_button.png", 500, 500, 250, 250)
+        start_button = Button(screen, start_button_start)
 
-        #attack_button.draw()
-        #block_button.draw()
-        #heal_button.draw()
-        #target_one_button.draw()
+        if start_button.get_button():
+            start_game = True
 
-        # Shades actions
-        attack = False
-        block = False
-        heal = False
-        target = None
-        pygame.mouse.set_visible(True)
+        if start_game:
+            game.background(background_img)
+            game.panel(panel_img)
 
-        if attack_button.draw():
-            target = goon
-            attack = True
-        if block_button.draw():
-            block = True
-        if heal_button.draw():
-            heal = True
+            game.display_character("img/shades.png", 150, 350)
+            game.display_character("img/goon.png", 900, 400)
 
-        if game_over == 0:
-            if shades.death == False:
-                if current_fighter == 1:
-                    if attack == True:
-                        shades.attack(target)
-                        print("You attacked goon!")
-                        print(f"Goon Health: {goon.current_hp}")
-                        current_fighter += 1
-                    if block == True:
-                        shades.block(True)
-                        print("Blocked!")
-                        current_fighter += 1
-                    if heal == True:
-                        shades.heal()
-                        print("Healed!")
-                        current_fighter += 1
-            else:
-                game_over = 1
-        
-            if goon.death == False:
-                if current_fighter == 2:
-                    if shades.current_hp <= 20:
-                        goon.attack(shades)
-                        print("Goon attacked you!")
-                        print(f"Shades Health: {shades.current_hp}")
-                    if goon.current_hp <= 25:
-                        rand_low_health = random.randint(0,1)
-                        if rand_low_health == 0:
-                            goon.heal()
-                            print("Goon Healed")
-                        else:
-                            goon.block(True)
-                            print("Blocked!")
-                    else:
-                        rand_action = random.randint(0,2)
-                        if rand_action == 0:
+            game.health_bar(shades, 150, 650)
+            game.health_bar(goon, 850, 650)
+
+            attack_button_start = game.draw_button("img/attack_button.png", 150, 675, 111, 27)
+            block_button_start = game.draw_button("img/block_button.png", 150, 710, 111, 27)
+            heal_button_start = game.draw_button("img/heal_button.png", 150, 745, 111, 27)
+            restart_button_start = game.draw_button("img/restart_button.png", 850, 0, 303, 303)
+
+            attack_button = Button(screen, attack_button_start)
+            block_button = Button(screen, block_button_start)
+            heal_button = Button(screen, heal_button_start)
+            restart_button = Button(screen, restart_button_start)
+
+            #Shades actions
+            attack = False
+            block = False
+            heal = False
+            target = None
+            pygame.mouse.set_visible(True)
+
+            if attack_button.get_button():
+                target = goon
+                attack = True
+            if block_button.get_button():
+                block = True
+            if heal_button.get_button():
+                heal = True
+
+            if game_over == 0:
+                if not shades.death:
+                    if current_fighter == 1:
+                        if attack:
+                            shades.attack(target)
+                            shades.reverse_block(target)
+                            game.empty_screen(shades, goon)
+                            game.display_character("img/shades_attack.png", 250, 350)
+                            game.display_character("img/goon.png", 900, 400)
+                            pygame.display.update()
+                            time.sleep(.75)
+                            game.empty_screen(shades, goon)
+                            game.display_character("img/shades.png", 250, 350)
+                            game.display_character("img/goon.png", 900, 400)
+                            pygame.display.update()
+                            time.sleep(1.25)
+                            current_fighter = 2
+                        if block:
+                            shades.block(True)
+                            time.sleep(1.25)
+                            current_fighter = 2
+                        if heal:
+                            shades.heal()
+                            if shades.potion_count > 3:
+                                time.sleep(1.25)
+                                current_fighter = 2
+                            time.sleep(1.25)
+                            current_fighter = 2
+
+                else:
+                    game_over = 1
+
+                if not goon.death:
+                    if current_fighter == 2:
+                        if shades.current_hp <= 20:
                             goon.attack(shades)
-                            print("Goon attacked you!")
-                            print(f"Shades Health: {shades.current_hp}")
-                        if rand_action == 1:
-                            goon.block(True)
-                            print("Blocked!")
-                        if rand_action == 2:
-                            goon.heal()
-                            print("Goon healed")
-            else:
-                game_over = 2
-        
-        if current_fighter > 2:
-            current_fighter = 1
+                            goon.reverse_block(shades)
+                            game.empty_screen(shades, goon)
+                            game.display_character("img/goon_attack.png", 900, 400)
+                            game.display_character("img/attack_button.png", 925, 725)
+                            game.display_character("img/shades.png", 250, 350)
+                            pygame.display.update()
+                            time.sleep(.75)
+                            game.empty_screen(shades, goon)
+                            game.display_character("img/goon.png", 900, 400)
+                            game.display_character("img/shades.png", 250, 350)
+                            game.empty_screen(shades, goon)
+                            time.sleep(1)
+                        if goon.current_hp <= 25:
+                            rand_low_health = random.randint(0,2)
+                            if rand_low_health in (0,1):
+                                goon.heal()
+                                game.display_character("img/heal_button.png", 925, 725)
+                                pygame.display.update()
+                                if goon.potion_count > 3:
+                                    current_fighter = 2
+                                time.sleep(1)
+                            else:
+                                goon.block(True)
+                                game.display_character("img/block_button.png", 925, 725)
+                                pygame.display.update()
+                                time.sleep(1)
+                        else:
+                            rand_action = random.randint(0,4)
+                            if rand_action in (0,1,2):
+                                goon.attack(shades)
+                                goon.reverse_block(shades)
+                                game.empty_screen(shades, goon)
+                                game.display_character("img/goon_attack.png", 900, 400)
+                                game.display_character("img/attack_button.png", 925, 725)
+                                game.display_character("img/shades.png", 250, 350)
+                                pygame.display.update()
+                                time.sleep(0.75)
+                                game.empty_screen(shades, goon)
+                                game.display_character("img/goon.png", 900, 400)
+                                game.display_character("img/shades.png", 250, 350)
+                                pygame.display.update()
+                                time.sleep(1)
+                            if rand_action == 3:
+                                goon.block(True)
+                                game.display_character("img/block_button.png", 925, 725)
+                                pygame.display.update()
+                                time.sleep(1)
+                else:
+                    game_over = 2
 
-        if game_over != 0:
-            if game_over == 1:
-                # add screen.blit lose
-                print("You Lost!")
-            if game_over == 2:
-                # add screen.blit victory
-                print("You win")
-            # add conditional for restart button
-        
+            if current_fighter == 2:
+                current_fighter = 1
+
+            if game_over != 0:
+                if game_over == 1:
+                    game.end_screen()
+                    game.display_character("img/goon.png", 900, 400)
+                    game.display_character("img/lose_button.png", 500, 500)
+                    game.display_character("img/shades_dead.png", 250, 350)
+                    pygame.display.update()
+                if game_over == 2:
+                    game.end_screen()
+                    game.display_character("img/shades.png", 250, 350)
+                    game.display_character("img/win_button.png", 500, 500)
+                    game.display_character("img/goon_dead.png", 900, 400)
+                    pygame.display.update()
+            if restart_button.get_button():
+                shades.reset()
+                goon.reset()
+                current_fighter = 1
+                game_over = 0
+                game.health_bar(shades, 150, 650)
+                game.health_bar(goon, 850, 650)
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                clicked = True
-            else:
-                clicked = False
         pygame.display.update()
     pygame.quit()
 
