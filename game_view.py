@@ -11,7 +11,7 @@ class GameView():
 
     def __init__(self):
         """
-
+        Constructs all the necessary attributes for the GameView class.
         """
         self.panel_ = 618/2
         self.width = 1103

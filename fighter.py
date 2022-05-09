@@ -18,7 +18,7 @@ class Fighter():
 
     def __init__(self, name, max_hp, strength, block_):
         """
-        Constructs all the necesary attributes for the Fighter class.
+        Constructs all the necessary attributes for the Fighter class.
 
         Attributes:
             name: A string representing the name of a fighter.
