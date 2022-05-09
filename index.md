@@ -6,13 +6,16 @@ Shades' Adventure is a game in which you get to experience the colorful world of
 
 To play the game, run the file `game.py`.
 
-On your way to your room you will face off against goons. You can do a few things to gain victory:
+Shades' Adventure is a turn based RPG where your character fights against a goon.
+![Alt Text](webimages/gameexample.png)
+Your character and the goon take turns making moves until one of you runs out of health.
+Both you and the goon have a few different tactics you can choose from when it is your turn:
 
-- Attack: Deal damage to your opponent!
+- Attack: Deal damage to your opponent.
     ![Alt Text](webimages/attack.png)
-- Block: Defend yourself against enemy attacks!
+- Block: Defend yourself against enemy attacks.
     ![Alt Text](webimages/block.png)
-- Heal: Gain back your health before the goon defeats you!
+- Heal: Gain back your health before the goon defeats you.
     ![Alt Text](webimages/heal.png)
     
 ## Installation
