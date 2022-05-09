@@ -6,12 +6,17 @@ class GameView():
     """
     GameView class for displayign visuals.
 
-    Attributes:
     """
 
     def __init__(self):
         """
         Constructs all the necessary attributes for the GameView class.
+
+        Attributes:
+            panel: An int representing the size of the panel.
+            width: An int representing the width of the game window.
+            height: An int representing the height of the game window.
+            surface: Produces the window that displays the game.
         """
         self.panel_ = 618/2
         self.width = 1103
@@ -20,7 +25,10 @@ class GameView():
 
     def background(self, image):
         """
+        Generate the background of the display.
 
+        Args:
+            image: A .png file that is used as a background.
         """
         self.surface.blit(image,(0,0))
 
@@ -32,7 +40,14 @@ class GameView():
 
     def display_character(self, image, x_coor, y_coor):
         """
+        Generate the characters in the display.
 
+        Args:
+            image: A .png file that depicts a character.
+            x_coor: An int representing the image's x coordinate on the
+            display.
+            y_coor: An int representing the image's y coordinate on the
+            display.
         """
         start_img = pygame.image.load(image).convert_alpha()
         img = pygame.transform.scale(start_img, \
@@ -42,6 +57,9 @@ class GameView():
         self.surface.blit(img, (rect.x, rect.y))
 
     def empty_screen(self, ch1, ch2):
+        """
+        Display an empty string. 
+        """
         game = GameView()
         background_img = pygame.image.load("img/background.png").convert_alpha()
         panel_img = pygame.image.load("img/panel.png").convert_alpha()
@@ -65,6 +83,9 @@ class GameView():
         restart_button = Button(self.surface, restart_button_start)
 
     def end_screen(self):
+        """
+        Display the end screen.
+        """
         game = GameView()
         background_img = pygame.image.load("img/background.png").convert_alpha()
         panel_img = pygame.image.load("img/panel.png").convert_alpha()
@@ -77,7 +98,15 @@ class GameView():
 
     def health_bar(self, character, x_coor, y_coor):
         """
+        Display an image that represents the current health level of a fighter.
 
+        Args:
+            character: An instance of the Fighter class that represents a
+            fighter.
+            x_coor: An int representing the x coordinate of the image on the
+            display.
+            y_coor: An int representing the y coordinate of the image on the
+            display.
         """
         current_hp = character.current_hp
         max_hp = character.max_hp
@@ -87,7 +116,19 @@ class GameView():
 
     def draw_button(self, image, x_coor, y_coor, x_size, y_size):
         """
+        Display an image representing a button that the player can press. The
+        function will also resize an image.
 
+        Args:
+            image: A .png file that represents a button.
+            x_coor: An int representing the x coordinate of the image on the
+            display.
+            y_coor: An int representing the y coordinate of the image on the
+            display.
+            x_size: An int representing the size an image transforms in the x
+            direction.
+            y_size: An int representing the size an image transforms in the y
+            direction.
         """
         start_img = pygame.image.load(image).convert_alpha()
         img = pygame.transform.scale(start_img, (x_size, y_size))
