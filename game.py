@@ -194,7 +194,7 @@ def main():
                     game.display_character("img/goon.png", 900, 400)
                     game.display_character("img/lose_button.png", 500, 500)
                     game.display_character("img/shades_dead.png", 250, 350)
-                    # pygame.display.update()
+                    pygame.display.update()
                     if restart_button.get_button():
                         shades.reset()
                         goon.reset()
@@ -209,7 +209,7 @@ def main():
                     game.display_character("img/shades.png", 250, 350)
                     game.display_character("img/win_button.png", 500, 500)
                     game.display_character("img/goon_dead.png", 900, 400)
-                    # pygame.display.update()
+                    pygame.display.update()
                     if restart_button.get_button():
                         shades.reset()
                         goon.reset()
