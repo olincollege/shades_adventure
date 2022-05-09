@@ -138,14 +138,14 @@ def main():
                             rand_low_health = random.randint(0,2)
                             if rand_low_health in (0,1):
                                 goon.heal()
-                                game.display_character("img/goon_attack.png", 900, 400)
+                                game.display_character("img/goon.png", 900, 400)
                                 game.display_character("img/shades.png", 250, 350)
                                 game.display_character("img/heal_button.png", 925, 725)
                                 pygame.display.update()
                                 time.sleep(1)
                             else:
                                 goon.block(True)
-                                game.display_character("img/goon_attack.png", 900, 400)
+                                game.display_character("img/goon.png", 900, 400)
                                 game.display_character("img/shades.png", 250, 350)
                                 game.display_character("img/block_button.png", 925, 725)
                                 pygame.display.update()
