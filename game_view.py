@@ -34,7 +34,10 @@ class GameView():
 
     def panel(self, image):
         """
+        Generate the bottom panel of the display.
 
+        Args:
+            image: A .png file that is used as the panel to display action buttons.
         """
         self.surface.blit(image, (0,self.height - self.panel_))
 
@@ -58,7 +61,13 @@ class GameView():
 
     def empty_screen(self, ch1, ch2):
         """
-        Display an empty string.
+        The function displays the background, panel, and action buttons.
+        This is used during animation to display sprite animations by 
+        removing the previous sprite blits.
+
+        Args:
+            ch1: the protagonist instance of the Fighter class
+            ch2: the antagonist instance of the Fighter class 
         """
         game = GameView()
         background_img = pygame.image.load("img/background.png").convert_alpha()
@@ -84,7 +93,8 @@ class GameView():
 
     def end_screen(self):
         """
-        Display the end screen.
+        Similar to "empty_screen", this function provides the background display
+        for the end screen, which is just the background and panel images. 
         """
         game = GameView()
         background_img = pygame.image.load("img/background.png").convert_alpha()
