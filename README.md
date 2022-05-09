@@ -32,3 +32,7 @@ python game.py
 ## Website
 
 Visit our website [here](https://olincollege.github.io/shades_adventure/).
+
+## Demo
+
+You can also watch a demo of our game [here](https://youtu.be/4fSUNx8Os6Q).
