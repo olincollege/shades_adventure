@@ -22,11 +22,11 @@ Both you and the goon have a few different tactics you can choose from when it i
 
 A few things that you are going to need before installing the game are:
 
-- conda python (3.8) - you can install python (3.8) using this link: 
+- python (3.8) - you can install python (3.8) [here](https://www.python.org/downloads/release/python-380/).
 
 - pygame - type `pip install pygame` into your terminal.
 
-- While not necessary, our repository includes a file for implementing unit tests. If you want to run our tests, you first need to type `pip install pytest` into your terminal.
+- While not necessary, our repository includes a file, `test_fighter.py` for implementing unit tests. If you want to run our tests, you first need to type `pip install pytest` into your terminal.
 
 To clone our repository, type into your terminal `git clone git@github.com:olincollege/shades_adventure.git`.
 
