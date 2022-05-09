@@ -6,7 +6,10 @@ This is the repository for the game *Shades' Adventure*, created by Evan Lockwoo
 
 The main installation required for this project is conda python (3.8). You can install it using this link: 
 
-Pygame is also required to run the game. You can install this library by typing `pip install pygame`.
+Pygame is also required to run the game. You can install this library by typing into your terminal:
+```
+pip install pygame
+```
 
 ## File Structure
 
@@ -21,7 +24,7 @@ The repository also contains a `/img` folder that contains all visuals used in t
 
 ## Run the Game
 
-To run the game, either run the file `game.py` or type into your terminal
+To run the game, either run the file `game.py` or type into your terminal:
 ```
 python game.py
 ```
