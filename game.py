@@ -184,7 +184,7 @@ def main():
                         "img/restart_button.png", 500, 600, 303, 303)
                     restart_button = Button(screen, restart_button_start)
                     game.display_character("img/goon.png", 900, 400)
-                    game.display_character("img/lose_button.png", 500, 500)
+                    game.display_character("img/lost.png", 500, 500)
                     game.display_character("img/shades_dead.png", 250, 350)
                     pygame.display.update()
                     if restart_button.get_button():
