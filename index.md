@@ -9,11 +9,11 @@ To play the game, run the file `game.py`.
 On your way to your room you will face off against goons. You can do a few things to gain victory:
 
 - Attack: Deal damage to your opponent!
-    ![Alt Text](webimage/attack.png)
+    ![Alt Text](webimages/attack.png)
 - Block: Defend yourself against enemy attacks!
-    ![Alt Text](webimage/block.png)
+    ![Alt Text](webimages/block.png)
 - Heal: Gain back your health before the goon defeats you!
-    ![Alt Text](webimage/heal.png)
+    ![Alt Text](webimages/heal.png)
     
 ## Installation
 
@@ -31,10 +31,10 @@ You are now ready to play Shades' Adventure!
 
 # About Us
 
-![Alt Text](img/pizza.png)
+![Alt Text](webimages/pizza.png)
 
 Evan Lockwood(left) and Mateo Macias(right) are two students at the Frank W. Olin College of Engineering who love to sing shanties, talk about robots, and make videogames about their friend, Aaron.
 
-![Alt Text](img/aaron.png)
+![Alt Text](webimages/aaron.png)
 
 This game is dedicated to Aaron for being an awesome friend and having super cool glasses.
