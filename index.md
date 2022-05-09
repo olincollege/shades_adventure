@@ -7,6 +7,7 @@ Shades' Adventure is a game in which you get to experience the colorful world of
 On your way to your room you will face off against goons. You can do a few things to gain victory:
 
 - Attack: Deal damage to your opponent!
+    ![Alt Text](path/to/webimages/shades attack.png)
 - Block: Defend yourself against enemy attacks!
 - Heal: Gain back your health before the goon defeats you!
 
@@ -14,11 +15,11 @@ On your way to your room you will face off against goons. You can do a few thing
 
 A few things that you are going to need before installing the game are:
 
-- conda python (3.8): you can install python (3.8) using this link: 
+- conda python (3.8) - you can install python (3.8) using this link: 
 
-- pygame: type `pip install pygame` into your terminal.
+- pygame - type `pip install pygame` into your terminal.
 
-- While not necessary, our repository includes a file for implementing unit tests. If you want to run our tests, you first need to `pip install pytest` .
+- While not necessary, our repository includes a file for implementing unit tests. If you want to run our tests, you first need to type `pip install pytest` into your terminal.
 
 # About Us
 
