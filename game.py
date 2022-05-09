@@ -37,14 +37,17 @@ def main():
     while run:
         game = GameView()
 
+        # load starting screen
         game.background(starting_screen_img)
         start_button_start = game.draw_button("img/start_button.png", 500, 500, 250, 250)
         start_button = Button(screen, start_button_start)
 
         if start_button.get_button():
             start_game = True
-
+        
+        # start game
         if start_game:
+            # render display
             game.background(background_img)
             game.panel(panel_img)
 
@@ -64,7 +67,7 @@ def main():
             heal_button = Button(screen, heal_button_start)
             restart_button = Button(screen, restart_button_start)
 
-            #Shades actions
+            # Shades' actions
             attack = False
             block = False
             heal = False
@@ -164,10 +167,10 @@ def main():
                                 time.sleep(1)
                 else:
                     game_over = 2
-
+            # switch player turn
             if current_fighter == 2:
                 current_fighter = 1
-
+            # end game and load end screen
             if game_over != 0:
                 if game_over == 1:
                     game.end_screen()
