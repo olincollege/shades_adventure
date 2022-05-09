@@ -7,7 +7,7 @@ Shades' Adventure is a game in which you get to experience the colorful world of
 To play the game, run the file `game.py`.
 
 Shades' Adventure is a turn based RPG where your character fights against a goon.
-![Alt Text](webimages/gameexample.png)
+![Alt Text](webimages/gameexample.jpg)
 Your character and the goon take turns making moves until one of you runs out of health.
 Both you and the goon have a few different tactics you can choose from when it is your turn:
 
