@@ -35,4 +35,4 @@ Visit our website [here](https://olincollege.github.io/shades_adventure/).
 
 ## Demo
 
-You can also watch a demo of our game [here](https://youtu.be/4fSUNx8Os6Q).
+ View our presentation [here](https://youtu.be/MHrLYRFobHU).
