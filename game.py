@@ -105,9 +105,6 @@ def main():
                             current_fighter = 2
                         if heal:
                             shades.heal()
-                            # if shades.potion_count > 3:
-                            #     time.sleep(1.25)
-                            #     current_fighter = 2
                             time.sleep(1.25)
                             current_fighter = 2
                         if restart_button.get_button():
@@ -145,8 +142,6 @@ def main():
                                 game.display_character("img/shades.png", 250, 350)
                                 game.display_character("img/heal_button.png", 925, 725)
                                 pygame.display.update()
-                                # if goon.potion_count > 3:
-                                #     current_fighter = 2
                                 time.sleep(1)
                             else:
                                 goon.block(True)
@@ -180,9 +175,6 @@ def main():
                         current_fighter = 1
                 else:
                     game_over = 2
-            # # switch player turn
-            # if current_fighter == 2:
-            #     current_fighter = 1
 
             # end game and load end screen
             if game_over != 0:
@@ -207,7 +199,7 @@ def main():
                     restart_button_start = game.draw_button("img/restart_button.png", 500, 600, 303, 303)
                     restart_button = Button(screen, restart_button_start)
                     game.display_character("img/shades.png", 250, 350)
-                    game.display_character("img/win_button.png", 500, 500)
+                    game.display_character("img/win.png", 500, 500)
                     game.display_character("img/goon_dead.png", 900, 400)
                     pygame.display.update()
                     if restart_button.get_button():
