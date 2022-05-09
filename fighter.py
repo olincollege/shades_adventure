@@ -4,7 +4,7 @@ import random
 
 class Fighter():
     """
-    Fighter class for both player controlled character and NPC's.
+    Fighter class for both player controlled character and NPC.
 
     Attributes:
         name: A string representing the name of the fighter.

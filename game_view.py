@@ -4,7 +4,7 @@ from button_controls import Button
 
 class GameView():
     """
-
+    
     """
 
     def __init__(self):
