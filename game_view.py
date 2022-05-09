@@ -1,4 +1,4 @@
-""""""
+"""Class used for window display."""
 import pygame
 from button_controls import Button
 
@@ -58,7 +58,7 @@ class GameView():
 
     def empty_screen(self, ch1, ch2):
         """
-        Display an empty string. 
+        Display an empty string.
         """
         game = GameView()
         background_img = pygame.image.load("img/background.png").convert_alpha()
@@ -109,7 +109,8 @@ class GameView():
         max_hp = character.max_hp
         ratio = current_hp / max_hp
         pygame.draw.rect(self.surface, (255, 0, 0), (x_coor, y_coor, 175, 20))
-        pygame.draw.rect(self.surface, (0, 128, 0), (x_coor, y_coor, 175 * ratio, 20))
+        pygame.draw.rect(self.surface, (0, 128, 0), (x_coor, y_coor, 175 * \
+        ratio, 20))
 
     def draw_button(self, image, x_coor, y_coor, x_size, y_size):
         """
@@ -133,4 +134,3 @@ class GameView():
         rect.topleft = (x_coor, y_coor)
         self.surface.blit(img, (rect.x, rect.y))
         return rect
-        

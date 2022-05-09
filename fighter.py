@@ -1,4 +1,4 @@
-"""This code is for the fighters in the game"""
+"""Class used to control fighters."""
 
 import random
 

@@ -1,4 +1,4 @@
-""""""
+"""Class used to track mouse on window."""
 import pygame
 
 class Button():

@@ -1,4 +1,4 @@
-""""""
+"""Main file used to run game."""
 import random
 import time
 import pygame
@@ -45,7 +45,6 @@ def main():
 
         if start_button.get_button():
             start_game = True
-        
         # start game
         if start_game:
             # render display
@@ -174,7 +173,8 @@ def main():
                                 time.sleep(1)
                             if rand_action == 3:
                                 goon.block(True)
-                                game.display_character("img/block_button.png", 925, 725)
+                                game.display_character("img/block_button.png",\
+                                     925, 725)
                                 pygame.display.update()
                                 time.sleep(1)
                         current_fighter = 1
@@ -188,7 +188,8 @@ def main():
             if game_over != 0:
                 if game_over == 1:
                     game.end_screen()
-                    restart_button_start = game.draw_button("img/restart_button.png", 500, 600, 303, 303)
+                    restart_button_start = game.draw_button(\
+                        "img/restart_button.png", 500, 600, 303, 303)
                     restart_button = Button(screen, restart_button_start)
                     game.display_character("img/goon.png", 900, 400)
                     game.display_character("img/lose_button.png", 500, 500)
