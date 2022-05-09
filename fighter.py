@@ -11,13 +11,25 @@ class Fighter():
         max_hp: An int representing the maximum health a fighter can have.
         strength: An int representing the strength of a fighter.
         block_: An int representing a fighter's ability to block.
-        x: An int representing an x-coordinate.
-        y: An int representing a y-coordinate.
     """
 
     def __init__(self, name, max_hp, strength, block_):
         """
+        Constructs all the necesary attributes for the Fighter class.
 
+        Attributes:
+            name: A string representing the name of a fighter.
+            max_hp: An int representing the maximum amount of health a fighter
+            can have.
+            current_hp: An int representing the current amount of health a
+            fighter has.
+            strength: An int representing the amount of damage a fighter can do
+            to an opponent.
+            block_: An int representing the amount of damage a fighter can
+            deflect from an opponent.
+            potion_count: An int representing the number of times a fighter has
+            healed.
+            death: A boolean that determines if a player is alive or not.
         """
         self.name = name
         self.max_hp = max_hp
@@ -50,8 +62,10 @@ class Fighter():
 
     def block(self, status):
         """
-        Determine the amount of damage done to fighter when attacked by an
-        opponent.
+        Determine if fighter is blocking.
+
+        Args:
+            status: A boolean saying whether or not the fighter is blocking.
         """
         self.block_status = status
         if self.current_hp < 1:
@@ -60,20 +74,20 @@ class Fighter():
 
     def reverse_block(self, target):
         """
+        Update opponent's block_status to False.
 
+        Args:
+            target: An instance of the Fighter class representing the opponent.
         """
         if target.block_status:
             target.block_status = False
 
     def heal(self):
         """
-        Add health to player's current health.
-
-        Args:
-            potion: An int representing the amount of health rewarded back to
-            the character.
+        Increase the value of current_hp by 8. This method only adds to
+        current_hp the first three times it is run.
         """
-        if self.potion_count < 3:
+        if self.potion_count <= 3:
             if self.current_hp < 1:
                 self.death = True
             else:
@@ -83,12 +97,10 @@ class Fighter():
                     potion = damage_taken
                 self.current_hp += potion
                 self.potion_count += 1
-        else:
-            print("Out of potions")
 
     def reset(self):
         """
-        Reset Character stats at the end of a game.
+        Reset fighter instance at the end of a game.
         """
         self.death = False
         self.current_hp = self.max_hp
