@@ -19,6 +19,13 @@ The file structure for this project consists of the following .py files:
 
 The repository also contains a `/img` folder that contains all visuals used in the project.
 
+## Run the Game
+
+To run the game, either run the file `game.py` or type into your terminal
+```
+python game.py
+```
+
 ## Website
 
 Visit our website [here](https://olincollege.github.io/shades_adventure/).
