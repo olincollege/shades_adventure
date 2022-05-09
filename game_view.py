@@ -4,7 +4,9 @@ from button_controls import Button
 
 class GameView():
     """
-    
+    GameView class for displayign visuals.
+
+    Attributes:
     """
 
     def __init__(self):

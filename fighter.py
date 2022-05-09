@@ -7,10 +7,13 @@ class Fighter():
     Fighter class for both player controlled character and NPC.
 
     Attributes:
-        name: A string representing the name of the fighter.
-        max_hp: An int representing the maximum health a fighter can have.
-        strength: An int representing the strength of a fighter.
-        block_: An int representing a fighter's ability to block.
+        name: A string representing the name of a fighter.
+        max_hp: An int representing the maximum amount of health a fighter
+        can have.
+        strength: An int representing the amount of damage a fighter can do
+        to an opponent.
+        block_: An int representing the amount of damage a fighter can
+        deflect from an opponent.
     """
 
     def __init__(self, name, max_hp, strength, block_):
