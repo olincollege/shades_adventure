@@ -93,9 +93,6 @@ class GameView():
         game.background(background_img)
         game.panel(panel_img)
 
-        restart_button_start = game.draw_button("img/restart_button.png", 500, 600, 303, 303)
-        restart_button = Button(self.surface, restart_button_start)
-
     def health_bar(self, character, x_coor, y_coor):
         """
         Display an image that represents the current health level of a fighter.
