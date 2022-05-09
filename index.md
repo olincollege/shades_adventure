@@ -7,10 +7,12 @@ Shades' Adventure is a game in which you get to experience the colorful world of
 On your way to your room you will face off against goons. You can do a few things to gain victory:
 
 - Attack: Deal damage to your opponent!
-    ![Alt Text](webimages/shades attack.png)
+    ![Alt Text](img/Attack Button.png)
 - Block: Defend yourself against enemy attacks!
+    ![Alt Text](img/Block Button.png)
 - Heal: Gain back your health before the goon defeats you!
-
+    ![Alt Text](img/Heal Button.png)
+    
 ## Installation
 
 A few things that you are going to need before installing the game are:
