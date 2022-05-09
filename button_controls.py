@@ -23,8 +23,8 @@ class Button():
 
     def get_button(self):
         """
-        Determine the mouse position and determine if it has clicked a certain
-        area.
+        Determine the mouse position and if it has clicked within the boundary
+        of a given rectangle.
         """
         action = False
         mouse_pos = pygame.mouse.get_pos()
