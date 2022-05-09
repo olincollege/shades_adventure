@@ -2,6 +2,10 @@
 
 Shades' Adventure is a game in which you get to experience the colorful world of Olin College of Engineering. Play as Shades as you make your way back to your dorm room to get some rest!
 
+## Demo
+
+You can also watch a demo of our game [here](https://youtu.be/4fSUNx8Os6Q).
+
 ## How to Play
 
 To play the game, run the file `game.py` or type into your terminal:
