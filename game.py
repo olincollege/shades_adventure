@@ -30,7 +30,7 @@ def main():
     panel_img = pygame.image.load("img/panel.png").convert_alpha()
 
     shades = Fighter("Shades", 100, 15, -5)
-    goon = Fighter("Goon", 100, 12, -3)
+    goon = Fighter("Goon", 100, 25, -3)
 
 
     run = True
